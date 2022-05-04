@@ -17,23 +17,23 @@ iris1[1, ]   # s?lection d'une ligne par son num?ro avec [n,]
 iris1[1,2]  # s?lection d'une case avec [nlig,ncol]
 
 
-iris1$SepalLength    # poursuivez les commentaires
+iris1$SepalLength    # sélectionner la variable par son nom
 
 iris1[c(1,5,10), ] # sélectionner lignes 1, 5 et 10 
-iris1[-(5:30), ] #afficher les lignes inférieures à 5 et supérieures à 30
+iris1[-(5:30), ] #afficher les lignes inférieures à 5 et supérieures à 30 déselctionner de 5 et 30
 iris1[ ,1:4] # afficher les 4 premières colonnes
 iris1[c(1,5,10) , 1:4] # sélectionner les lignes 1,5 et 10 en affichant les colonnes de 1 à 4 
 iris1[iris1$Species=="virginica" , ] # sélection conditionnelle - sélectionner lignes ou la réponse dans la colonne species est virginica
-iris1[iris1$SepalLength > 7 , ] # sélectionner ligens dont valeurs SepaLength est 7
+iris1[iris1$SepalLength > 7 , ] # sélectionner lignes dont valeurs SepaLength est 7
 iris1[iris1$SepalLength < 6  &  iris1$Species=="virginica", ] # sélectioner lignes dont SepaLength est inférieur à 6 et species est virginica
 
 # S?lection dans un vecteur
 iris1$SepalLength[iris1$Species=="virginica"] # donner les valeurs de SepalLength pour les lignes dont species est virginica
-iris1[iris1$Species=="virginica", ]$SepalLength # 
+iris1[iris1$Species=="virginica", ]$SepalLength # donner que les virginica et ne garder que les espèces
 
 # Calculs sur des sous-ensembles
-apply(iris1[,1:4], MARGIN=2, mean)
-tapply(iris1$SepalLength, iris1$Species, mean)
+apply(iris1[,1:4], MARGIN=2, mean) # moyenne des  colonnes de 1 à 4
+tapply(iris1$SepalLength, iris1$Species, mean) # moyenne pour la colonne SepalLength et pour le sous-groupe de species
 
 
 
@@ -143,4 +143,51 @@ par(mfrow=c(1, 2),mar=c(5, 4, 2, 2)) # avec c(bas, gauche, haut, droite)
 plot(tai, poi)
 plot(tai)
 
-#Exercice 5 t3var
+#Exercice  t3var
+
+# Importer les données dans un objet t3var.
+t3var <- read.table("t3var.txt",header=TRUE,sep="\t")
+
+#Identifier les noms des variables de ce jeu de données.
+names(t3var)
+
+# Définir le contexte statistique (combien d’individus, de variables, types des variables)
+dim(t3var) #nb de lignes et nb de colonnes 
+
+str(t3var) # Nb lignes et colonnes et identification objets à l'intérieur
+
+#Sélectionner les individus 1, 10 et 20.
+t3var[c(1,10,20), ]
+
+#Sélectionner les femmes de plus de 170 cm. Combien sont-elles ?
+femme170 <- t3var[t3var$sexe=="f"& t3var$tai > 170 , ]
+femme170
+
+#Pour les individus 10 à 20, donner toutes les variables sauf la première.
+t3var[10:20,-1]
+
+#Sélectionner les femmes de taille supérieure à la taille moyenne des femmes, donner l’effectif de ce sous-groupe.
+moyennetaillefemme <- mean(t3var$tai[t3var$sexe=="f"],)
+taillesup <- t3var[t3var$tai[t3var$sexe=="f"]>moyennetaillefemme,]
+taillesup
+
+#Donner lamoyenne des poids pour tous, puis par sexe.
+mean(poi)
+mean(poi[sexe=="f"])
+mean(poi[sexe=="h"])
+tapply(poi, sexe, mean)
+
+#Donner la variance des poids pour tous, puis par sexe (la variance estimée ou de l’échantillon).
+var(poi)
+tapply(poi, sexe, var)
+
+#Écrire une fonction qui calcule l’indice de masse corporelle (IMC=masse/taille2 taille en m).
+#Appliquer cette fonction à l’ensemble du jeu de donnée pour créer une nouvelle variable.
+Fonctionimc <- function(masse,taille) masse/(taille^2)
+IMC  <- Fonctionimc(masse=poi, taille=tai/100) 
+t3var$IMC <- IMC
+t3var
+
+#Utiliser dlpyer
+
+
