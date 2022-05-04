@@ -118,8 +118,14 @@ nrow(taim)#13
 #Donner la moyenne des poids pour tous, puis par sexe.
 mean(t3var$poi)
 pm <- mean(t3var$poi)
-mean(t3var)
+pm
+pmSex <- tapply(t3var$poi, t3var$sexe, mean)
+pmSex#f: 53 et h:71
 
 #Donner la variance des poids pour tous, puis par sexe
 
+pVar <- var(t3var$poi)
+pVar
+pVarSex <- tapply(t3var$poi, t3var$sexe, var)
+pVarSex
 #Écrire une fonction qui calcule l’indice de masse corporelle (IMC=masse/taille2, taille en m)
