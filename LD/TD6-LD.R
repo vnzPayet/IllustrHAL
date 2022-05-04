@@ -111,12 +111,14 @@ nrow(fem170)#6
 t3var[10:20 , -1]
 
 #Sélectionner les femmes de taille supérieure à la taille moyenne des femmes, donner l’effectif de ce sous-groupe.
-mean(t3var$tai)#174.0606
-taim <- t3var[t3var$tai < 174.0606 & t3var$sexe=="f", ]
-nrow(taim)#24 
+mean(t3var$tai)#165.64
+taim <- t3var[t3var$tai < 165.64 & t3var$sexe=="f", ]
+nrow(taim)#13 
 
 #Donner la moyenne des poids pour tous, puis par sexe.
-
+mean(t3var$poi)
+pm <- mean(t3var$poi)
+mean(t3var)
 
 #Donner la variance des poids pour tous, puis par sexe
 

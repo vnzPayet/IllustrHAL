@@ -167,8 +167,8 @@ femme170
 t3var[10:20,-1]
 
 #Sélectionner les femmes de taille supérieure à la taille moyenne des femmes, donner l’effectif de ce sous-groupe.
-moyennetaillefemme <- mean(tai[sexe=="f"],)
-taillesup <- t3var[tai>moyennetaillefemme & sexe=="f", ]
+moyennetaillefemme <- mean(t3var$tai[t3var$sexe=="f"],)
+taillesup <- t3var[t3var$tai[t3var$sexe=="f"]>moyennetaillefemme,]
 taillesup
 
 #Donner lamoyenne des poids pour tous, puis par sexe.
@@ -183,10 +183,11 @@ tapply(poi, sexe, var)
 
 #Écrire une fonction qui calcule l’indice de masse corporelle (IMC=masse/taille2 taille en m).
 #Appliquer cette fonction à l’ensemble du jeu de donnée pour créer une nouvelle variable.
-Fonctionimc <- function(masse,taille) {masse/(taille^2)}
+Fonctionimc <- function(masse,taille) masse/(taille^2)
 IMC  <- Fonctionimc(masse=poi, taille=tai/100) 
 t3var$IMC <- IMC
-head(t3var)
+t3var
 
 #Utiliser dlpyer
+
 
