@@ -15,25 +15,22 @@ iris1 <- read.table("DesIris.txt", header=TRUE, dec=".", sep=" ")
 iris1[ ,1]   # s?lection d'une colonne par son num?ro avec [,n]
 iris1[1, ]   # s?lection d'une ligne par son num?ro avec [n,]
 iris1[1,2]  # s?lection d'une case avec [nlig,ncol]
-
-
-iris1$SepalLength    # poursuivez les commentaires
-
-iris1[c(1,5,10), ] # sélectionner lignes 1, 5 et 10 
-iris1[-(5:30), ] #afficher les lignes inférieures à 5 et supérieures à 30
-iris1[ ,1:4] # afficher les 4 premières colonnes
-iris1[c(1,5,10) , 1:4] # sélectionner les lignes 1,5 et 10 en affichant les colonnes de 1 à 4 
-iris1[iris1$Species=="virginica" , ] # sélection conditionnelle - sélectionner lignes ou la réponse dans la colonne species est virginica
-iris1[iris1$SepalLength > 7 , ] # sélectionner ligens dont valeurs SepaLength est 7
-iris1[iris1$SepalLength < 6  &  iris1$Species=="virginica", ] # sélectioner lignes dont SepaLength est inférieur à 6 et species est virginica
+iris1$SepalLength    # sélection d'une colonne nommé "SepalLength
+iris1[c(1,5,10), ]   # sélection de 3 lignes : 1,5,10
+iris1[-(5:30), ]     # sélection de toutes les lignes sauf celles comprises entre 5:30
+iris1[ ,1:4]         # sélection des colonnes de 1:4
+iris1[c(1,5,10) , 1:4] # sélection des lignes 1,5,10 et des colonnes 1:4
+iris1[iris1$Species=="virginica" , ] # sélection conditionnelle des lignes selon si la colonne "Species" comprend exactement "virginica"
+iris1[iris1$SepalLength > 7 , ] # sélection conditionnelle des lignes selon si les nombres inscrits dans la colonne SetalLength sont strictement supérieur à 7
+iris1[iris1$SepalLength < 6  &  iris1$Species=="virginica", ]# sélection conditionnelle des lignes selon si les nombres inscrits dans la colonne SetalLength sont strictement inférieur à 6 et si la colonne "Species" comprend exactement "virginica"
 
 # S?lection dans un vecteur
-iris1$SepalLength[iris1$Species=="virginica"] # donner les valeurs de SepalLength pour les lignes dont species est virginica
-iris1[iris1$Species=="virginica", ]$SepalLength # 
+iris1$SepalLength[iris1$Species=="virginica"] # sélection des valeurs de la colonne SepalLength selon si la colonne "species" est égal à "virginica"
+iris1[iris1$Species=="virginica", ]$SepalLength # même chose de précédement, on peut écrire les choses dans les 2 sens
 
 # Calculs sur des sous-ensembles
-apply(iris1[,1:4], MARGIN=2, mean)
-tapply(iris1$SepalLength, iris1$Species, mean)
+apply(iris1[,1:4], MARGIN=2, mean) # calcul la moyenne des colonnes de 1:4, fonction MARGIN inconnu
+tapply(iris1$SepalLength, iris1$Species, mean) # calcul la moyenne spécifique de chacunes des espèces
 
 
 
@@ -143,4 +140,4 @@ par(mfrow=c(1, 2),mar=c(5, 4, 2, 2)) # avec c(bas, gauche, haut, droite)
 plot(tai, poi)
 plot(tai)
 
-#Exercice 5 t3var
+
