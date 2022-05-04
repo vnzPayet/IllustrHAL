@@ -8,7 +8,7 @@
 iris1 <- read.table("DesIris.txt", header=TRUE, dec=".", sep=" ")  
 
 # Sélection dans une table 
-iris1[ ,1]   # s?lection d'une colonne par son num?ro avec [,n]
+iris1[ ,1]   # sélection d'une colonne par son numéro avec [,n]
 iris1[1, ]   # s?lection d'une ligne par son num?ro avec [n,]
 iris1[1,2]  # s?lection d'une case avec [nlig,ncol]
 
