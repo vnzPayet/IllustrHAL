@@ -1,2 +1,5 @@
-ggplot(data = flights) +
-  geom_point(mapping = aes(x = distance, y = air_time))
+graphCB <- ggplot(data = flights) +
+  aes(x = distance, y = air_time)+
+  geom_point(pch=".")
+
+print(graphCB)
