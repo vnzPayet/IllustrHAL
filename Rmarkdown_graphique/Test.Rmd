@@ -1,0 +1,79 @@
+---
+title: "Graphiques communs"
+author: "Clovis"
+date: '13_05_22'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r import, include=FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+Voici les différents graphiques que le groupe OPEN22 a produit :
+
+```
+
+
+# Graphique CB :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_CB.R")
+```
+
+# Graphique LD :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_LD.R")
+```
+
+# Graphique JH :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_JH.R")
+```
+
+# Graphique GK :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_GK.R")
+```
+
+# Graphique ML
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_ML.R")
+```
+# Graphique CL :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_CL.R")
+```
+# Graphique PP :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_PP.R")
+```
+# Graphique LS :
+
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_LS.R")
+```
+# Graphique HV :
+```{r Graphique_CB, echo = FALSE, eval = TRUE}
+source("source/Graphique_HV.R")
+```
+
+
+
+ 
+
+
+
+
+ 
+ 
