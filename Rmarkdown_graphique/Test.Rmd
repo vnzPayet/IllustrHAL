@@ -27,44 +27,45 @@ source("source/Graphique_CB.R")
 
 # Graphique LD :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_LD, echo = FALSE, eval = TRUE}
 source("source/Graphique_LD.R")
 ```
 
 # Graphique JH :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_JH, echo = FALSE, eval = TRUE}
 source("source/Graphique_JH.R")
 ```
 
 # Graphique GK :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_GK, echo = FALSE, eval = TRUE}
 source("source/Graphique_GK.R")
 ```
 
 # Graphique ML
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_ML, echo = FALSE, eval = TRUE}
 source("source/Graphique_ML.R")
 ```
 # Graphique CL :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_CL, echo = FALSE, eval = TRUE}
 source("source/Graphique_CL.R")
 ```
 # Graphique PP :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_PP, echo = FALSE, eval = TRUE}
 source("source/Graphique_PP.R")
 ```
 # Graphique LS :
 
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_LS, echo = FALSE, eval = TRUE}
 source("source/Graphique_LS.R")
 ```
+
 # Graphique HV :
-```{r Graphique_CB, echo = FALSE, eval = TRUE}
+```{r Graphique_HV, echo = FALSE, eval = TRUE}
 source("source/Graphique_HV.R")
 ```
 
