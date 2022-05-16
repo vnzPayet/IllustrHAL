@@ -11,4 +11,5 @@ print(graphGK)
 
 
 #à Partir de 2015, beaucoup plus d'espèces ont été observées 
-#les espèces de papillons présentes(Limenitis camilla, Lycaena tityrus, Lycaena phlaeas)au début des observationt () ont disparu tandis que d'autres 
+#les espèces de papillons présentes(Limenitis camilla, Lycaena tityrus, Lycaena phlaeas)
+#au début des observations ont disparu tandis que d'autres ont apparu
