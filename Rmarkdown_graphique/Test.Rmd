@@ -63,7 +63,7 @@ source("source/Graphique_LS.R")
 ```
 
 # Graphique HV :
-```{r Graphique_HV, echo = FALSE, eval = FALSE}
+```{r Graphique_HV, echo = FALSE, eval = TRUE}
 source("source/Graphique_HV.R")
 ```
 
