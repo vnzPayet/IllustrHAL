@@ -1,7 +1,10 @@
 
 library(ggplot2)
 
-graphGK <- ggplot(data = papillon) +
+papillon <- read.table("Papillon.xlsx", header= TRUE, dec=".", sep=" ",stringsAsFactors = TRUE ) 
+
+
+graphGK <- ggplot(data = Papillon) +
   aes(x = Annee_de_derniere_observation, y = Nom_scientifique) +
   geom_point()
 
