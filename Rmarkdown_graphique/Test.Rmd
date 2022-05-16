@@ -28,6 +28,8 @@ source("source/Graphique_CB.R")
 ```
 
 # Graphique LD :
+Le jeu de données mtcars compare plusieurs modèles de véhicules.
+Vous trouverez ci-dessous un graphique représentant la consommation (mpg) en fonction de la puissance (cv), le temps d’accélération (qsec) est également mentionné.
 
 ```{r Graphique_LD, echo = FALSE, eval = TRUE} 
 # changer FALSE en TRUE !!
