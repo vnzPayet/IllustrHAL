@@ -66,9 +66,15 @@ source("source/Graphique_CL.R")
 ```
 # Graphique PP :
 
+Le jeu de données nycflights13 regroupe des informations issues de différentes compagnies aériennes qui volent à partir de différents aéroports de New York City. Cela concerne notamment des détails sur les vols, les avions et la météo au cours de l'année 2013.
+En utilisant ce jeu de données, nous avons établi un graphique des proportions de vols réalisés par chacune des compagnies aériennes (carrier). 
+
 ```{r Graphique_PP, echo = FALSE, eval = TRUE}
 source("source/Graphique_PP.R")
 ```
+
+Ainsi, en 2013, la compagnie aérienne ayant réalisé le plus grand nombre de vols au départ des différents aéroports de New York est United Airlines (UA). Elle est suivie par JetBlue (B6), ExpressJet (EV) et Delta (DL).
+
 # Graphique LS :
 
 ```{r Graphique_LS, echo = FALSE, eval = FALSE}
