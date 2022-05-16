@@ -1,7 +1,7 @@
 ---
 title: "Graphiques communs"
-author: "Clovis"
-date: '13_05_22'
+author: "Groupe OPEN 2022"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output: pdf_document
 ---
 
@@ -9,9 +9,14 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r warning, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
 ```{r import, include=FALSE}
 library(tidyverse)
 library(nycflights13)
+
 ```
 
 Voici les différents graphiques que le groupe OPEN22 a produit :
@@ -31,9 +36,11 @@ source("source/Graphique_LD.R")
 
 # Graphique JH :
 
-```{r Graphique_JH, echo = FALSE, eval = FALSE}
+```{r Graphique_JH, echo = FALSE, eval = TRUE}
 source("source/Graphique_JH.R")
 ```
+
+Ce diagramme de densité permet d'observer la distribution d'une variable continue ici, la taille des personnages.
 
 # Graphique GK :
 
@@ -43,12 +50,14 @@ source("source/Graphique_GK.R")
 
 # Graphique ML
 
-```{r Graphique_ML, echo = FALSE, eval = FALSE}
+Il est possible d'observer un histogramme présentant la longueur des sépales d'iris. 
+
+```{r Graphique_ML, echo = FALSE, eval = TRUE}
 source("source/Graphique_ML.R")
 ```
 # Graphique CL :
 
-```{r Graphique_CL, echo = FALSE, eval = FALSE}
+```{r Graphique_CL, echo = FALSE, eval = TRUE}
 source("source/Graphique_CL.R")
 ```
 # Graphique PP :
