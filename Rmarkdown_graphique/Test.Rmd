@@ -72,6 +72,9 @@ source("source/Graphique_LS.R")
 ```
 
 # Graphique HV :
+
+Ce graphique permet de voir la répartition de la taille en fonction du genre grâce à des boites à moustache. 
+
 ```{r Graphique_HV, echo = FALSE, eval = TRUE}
 source("source/Graphique_HV.R")
 ```
