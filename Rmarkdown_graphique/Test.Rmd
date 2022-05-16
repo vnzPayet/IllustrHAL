@@ -23,6 +23,8 @@ Voici les différents graphiques que le groupe OPEN22 a produit :
 
 # Graphique CB :
 
+Nous observons une augmentation linéaire du temps de vol en fonction de la distance du trajet. On peut voir également une variabilité de temps au sein de chaque trajet.
+
 ```{r Graphique_CB, echo = FALSE, eval = TRUE}
 source("source/Graphique_CB.R")
 ```
@@ -46,7 +48,7 @@ Ce diagramme de densité permet d'observer la distribution d'une variable contin
 
 # Graphique GK :
 
-```{r Graphique_GK, echo = FALSE, eval = FALSE}
+```{r Graphique_GK, echo = FALSE, eval = TRUE}
 source("source/Graphique_GK.R")
 ```
 
