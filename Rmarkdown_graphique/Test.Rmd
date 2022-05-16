@@ -24,7 +24,7 @@ source("source/Graphique_CB.R")
 
 # Graphique LD :
 
-```{r Graphique_LD, echo = FALSE, eval = FALSE} 
+```{r Graphique_LD, echo = FALSE, eval = TRUE} 
 # changer FALSE en TRUE !!
 source("source/Graphique_LD.R")
 ```
