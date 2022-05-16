@@ -53,7 +53,7 @@ source("source/Graphique_CL.R")
 ```
 # Graphique PP :
 
-```{r Graphique_PP, echo = FALSE, eval = FALSE}
+```{r Graphique_PP, echo = FALSE, eval = TRUE}
 source("source/Graphique_PP.R")
 ```
 # Graphique LS :
