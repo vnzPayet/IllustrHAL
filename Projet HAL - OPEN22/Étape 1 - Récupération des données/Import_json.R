@@ -6,3 +6,5 @@ result <- fromJSON(file = url)
 
 
 print(result)
+names(result)
+str(result)
