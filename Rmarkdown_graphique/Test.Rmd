@@ -51,6 +51,8 @@ Ce diagramme de densité permet d'observer la distribution d'une variable contin
 ```{r Graphique_GK, echo = FALSE, eval = TRUE}
 source("source/Graphique_GK.R")
 ```
+À Partir de 2015, beaucoup plus d'espèces ont été observées.
+les espèces de papillons présentes au début des observations (*Limenitis camilla*, *Lycaena tityrus*, *Lycaena phlaeas*) ont disparu tandis que d'autres ont apparu.
 
 # Graphique ML
 
@@ -59,13 +61,14 @@ Il est possible d'observer un histogramme présentant la longueur des sépales d
 ```{r Graphique_ML, echo = FALSE, eval = TRUE}
 source("source/Graphique_ML.R")
 ```
+
 # Graphique CL :
 
 ```{r Graphique_CL, echo = FALSE, eval = TRUE}
 source("source/Graphique_CL.R")
 ```
-# Graphique PP :
 
+# Graphique PP :
 Le jeu de données nycflights13 regroupe des informations issues de différentes compagnies aériennes qui volent à partir de différents aéroports de New York City. Cela concerne notamment des détails sur les vols, les avions et la météo au cours de l'année 2013.
 En utilisant ce jeu de données, nous avons établi un graphique des proportions de vols réalisés par chacune des compagnies aériennes (carrier). 
 
