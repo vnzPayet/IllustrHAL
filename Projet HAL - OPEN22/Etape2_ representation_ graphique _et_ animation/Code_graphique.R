@@ -4,7 +4,7 @@
 # Noms des colonnes : "date", "notice", "fichier"
 
 # Importer le tableau à partir d'un fichir csv
-tableau <- read.table("data/tableau_fictif.txt", sep = ",", header = TRUE)
+tableau <- read.table("tableau_fictif.csv", sep = ",", header = TRUE)
 dim(tableau)
 
 names(tableau)
@@ -37,31 +37,32 @@ maxi <- max(c(200,1000))*1.2
 
 barplot(c(file_premiere_ligne,notice_premiere_ligne), 
         names.arg = c("File", "Notice"),
-        main="Nombre de dépôt",
-        xlab="",
-        ylab="",
-        col=c("darkblue", "tomato"),
+        main="Représentation graphique du nombre de dépôt en fonction du type de publication",
+        xlab="Type de publication",
+        ylab="Nombre de dépôts",
+        col=c("cadetblue3", "sienna1"),
         las=1,
         ylim=c(0,maxi))
 
 barplot(c(100,150), 
         names.arg = c("File", "Notice"),
-        main="Nombre de dépôt",
-        xlab="",
-        ylab="",
-        col=c("darkblue", "tomato"),
+        main="Représentation graphique du nombre de dépôt en fonction du type de publication",
+        xlab="Type de publication",
+        ylab="Nombre de dépôts",
+        col=c("cadetblue3", "sienna1"),
         las=1,
         ylim=c(0,maxi))
 
 png("Test.png", width = 400, height = 480)
 barplot(c(200,300), 
         names.arg = c("File", "Notice"),
-        main="Nombre de dépôt",
-        xlab="",
-        ylab="",
-        col=c("darkblue", "tomato"),
+        main="Représentation graphique du nombre de dépôt en fonction du type de publication",
+        xlab="Type de publication",
+        ylab="Nombre de dépôts",
+        col=c("cadetblue3", "sienna1"),
         las=1,
         ylim=c(0,maxi))
 dev.off()
 
 abline(h=maxi, col="grey")
+
