@@ -1,0 +1,95 @@
+---
+title: "Projet_Data_HALathon"
+author: "Module OPEN 2022"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![](picture/Image3.png)
+
+
+**Commanditaire** :
+
+•	Oriane Debiez, documentaliste représentante « Les sourciers »
+
+L’équipe du Centre de documentation, La Source est à l’origine de cette demande.
+
+**Enseignant** : 
+
+•	Vincent PAYET
+
+**Etudiants** : 
+
+•	Clovis BROGGIO
+
+•	Léa DANIELI
+
+•	Jeanne HECKENBENNER 
+
+•	Ghislaine KOSSONOU 
+
+•	Manon LAFONT 
+
+•	Christophe LENZI
+
+•	Pauline M PERRIN 
+
+•	Léa SAGNE 
+
+•	Hélène VIGNON 
+
+**Contexte : le HALathon**
+
+L’Isara a mis en ligne en mars 2022 son portail institutionnel dans HAL, l’archive ouverte scientifique française, pour recenser et archiver des publications réalisées par les équipes de Recherche de l’Isara, c’est-à-dire les articles, ouvrages et thèses produits au sein de l’école. Ce portail HAL Isara rassemble la production scientifique de notre communauté d’enseignant (es) – chercheur (es), ingénieur (es) de recherche, technicien (nes) de laboratoires et doctorant (es).
+
+Un évènement sur deux mois, le HALathon, est organisé pour faire connaître les fonctionnalités de ce portail, sensibiliser les chercheurs à son utilisation et au cadre juridique de la diffusion des publications scientifiques, et les inciter à déposer un maximum de notices et documents dans le portail HAL Isara.
+Ce HALathon se déroule en mai et juin 2022, et prend la forme de plusieurs ateliers animés par les Sourciers. Les chercheurs et chercheuses déposent à cette occasion leurs publications dans le portail HAL Isara, sous la forme de notices descriptives, si possible accompagnées d’un fichier du texte intégral du document.
+
+**Objectif :**
+
+Pour valoriser cet effort particulier de diffusion des résultats de la recherche à l’Isara, les Sourciers souhaitent afficher sur la page « HALathon 2022 » du site un compteur du nombre de notices et de fichiers déposés.
+
+Ce visuel sera la représentation graphique et animée, pour plusieurs dates successives, du nombre de notices et documents déposés, afin d’en souligner l’augmentation avec le temps.
+
+Les données correspondantes (nombre de notices, nombre de fichiers, date) peuvent être récupérées via l’API de HAL (au format JSON ou CSV par ex.).
+
+**Contraintes :**
+
+Utilisation de R studio : les Sourciers ne sont pas formés à utiliser Python.
+
+**Livrables :**
+
+•	Graphique animé dans un format affichable dans le portail HAL Isara (insertion dans une page HTML : .gif ?).
+
+•	Script R pour reproduire le visuel avec les données des futures éditions du HALathon.
+
+•	Application Shiny pour générer le visuel sans passer par le code ?
+
+**Liens utiles :**
+
+•	Portail HAL Isara : <https://hal-isara.archives-ouvertes.fr/> 
+
+•	Page HALathon 2022 : <https://hal-isara.archives-ouvertes.fr/page/halathon-2022>  
+
+•	API de HAL : <https://api.archives-ouvertes.fr/search/> 
+
+•	Aide en ligne pour l’utilisation de l’API de HAL :
+<https://api.archives-ouvertes.fr/docs/search> 
+
+•	Requête API : dépôts par type dans le portail Isara
+<https://api.archives-ouvertes.fr/search/?q=*&fq=(collId_i%3A9626)&start=0&rows=0&wt=json&facet=true&facet.field=submitType_s&facet.sort=count> 
+
+•	Casuhalathon 2021 (inspiration pour le compteur) : 
+<https://casuhal2021.sciencesconf.org/resource/page/id/17> 
+
+
+**Rétroplanning : **
+
+![](picture/Retro.png)
+ **Etape, groupe et lien de communication : **
+ 
+ ![](picture/Tableau.png)
