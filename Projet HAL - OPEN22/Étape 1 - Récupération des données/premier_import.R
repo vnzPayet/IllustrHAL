@@ -19,8 +19,12 @@ tableau <- data.frame(notice, file)
 as_tibble(tableau)
 
 # ajout d'une nouvelle colonne date
-tableau <- mutate(tableau, date = format(Sys.time(), '%d %B %Y'))
+tableau <- mutate(tableau, date = format(Sys.time(), '%d-%m-%Y'))
+tableau(date, notice, file)
+
+tableau1 <- tableau[,c(3, 1, 2)]
+tableau1
 
 # Exportation sous format csv
 
-
+write.table(tableau1, "tableau_data", row.names = FALSE)
