@@ -4,27 +4,38 @@
 # Noms des colonnes : "date", "notice", "fichier"
 
 # Importer le tableau à partir d'un fichir csv
-tableau <- read.csv2("tableau.csv", header=TRUE, dec=",", sep=";")
+tableau <- read.table("data/tableau_fictif.txt", sep = ",", header = TRUE)
 dim(tableau)
 
 names(tableau)
 
 
 library(tidyverse)
+library(dplyr)
+as_tibble(tableau)
 
 # Graphiques
 
-graph <- ggplot(data = tableau) +
-  aes(x = fichier) +
-  geom_bar() +
-  xlab("Type de dépôt") +
-  ylab("Nombre")
+n(tableau)
 
-print(graph)
+notice_premiere_ligne <- tableau %>%
+  slice(1)%>%
+  select(notice)
+file_premiere_ligne <- tableau %>%
+  slice(1)%>%
+  select(file)
 
-maxi <- max(c(200,300))*1.2
+n <- tableau %>%
+  count(tableau)
 
-barplot(c(20,30), 
+
+as.numeric(notice_premiere_ligne)
+as.numeric(file_premiere_ligne)
+
+
+maxi <- max(c(200,1000))*1.2
+
+barplot(c(file_premiere_ligne,notice_premiere_ligne), 
         names.arg = c("File", "Notice"),
         main="Nombre de dépôt",
         xlab="",
