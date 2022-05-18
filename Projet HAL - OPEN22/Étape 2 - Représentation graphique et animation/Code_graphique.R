@@ -9,25 +9,22 @@ dim(tableau)
 
 names(tableau)
 
-# Import de la fonction ggplot
 
 library(tidyverse)
 
-# Graphique
+# Graphiques
 
-graph1 <- ggplot(data = tableau) +
-  aes() +
+graph <- ggplot(data = tableau) +
+  aes(x = fichier) +
   geom_bar() +
   xlab("Type de dépôt") +
   ylab("Nombre")
 
-print(graph1)
+print(graph)
 
-graph2 <- ggplot(data = tableau) +
-  aes() +
-  geom_bar() +
-  xlab("Type de dépôt") +
-  ylab("Nombre")
 
-print(graph2)
+barplot(c(2,3), main="Nombre de dépôt",
+        xlab="Type de dépôt",
+        ylab="Nombre")
+
 
