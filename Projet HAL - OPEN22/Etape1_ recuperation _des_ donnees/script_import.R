@@ -19,7 +19,7 @@ tableau <- data.frame(notice, file)
 as_tibble(tableau)
 
 # ajout d'une nouvelle colonne date
-tableau <- mutate(tableau, date = format(Sys.time(), "%d-%m-%Y"))
+tableau <- mutate(tableau, date = format(Sys.time(), "%d/%m/%Y"))
 tableau <- mutate(tableau, heure = format(Sys.time(), "%X"))
 
 nouvelles_donnees <- tableau[,c(3, 4, 1, 2)]
