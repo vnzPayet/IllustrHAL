@@ -25,8 +25,7 @@ tableau <- mutate(tableau, heure = format(Sys.time(), "%X"))
 nouvelles_donnees <- tableau[,c(3, 4, 1, 2)]
 
 
-# Exportation sous format csv
-
+# Exportation sous format txt
 
 if (file.exists("data/tableau_data.txt") == FALSE){
   write.table(nouvelles_donnees, "data/tableau_data.txt", row.names = FALSE, sep = ",", col.names = TRUE)
