@@ -1,3 +1,4 @@
 Etape3_shiny
-Auteurs : 
+Auteurs :
+Léa SAGNE
 Ghislaine KOSSONOU
