@@ -28,12 +28,12 @@ nouvelles_donnees <- tableau[,c(3, 4, 1, 2)]
 # Exportation sous format csv
 
 
-if (file.exists("data/tableau_data.csv") == FALSE){
-  write.csv(nouvelles_donnees, "data/tableau_data.csv", row.names = FALSE)
+if (file.exists("data/tableau_data.txt") == FALSE){
+  write.table(nouvelles_donnees, "data/tableau_data.txt", row.names = FALSE, sep = ",", col.names = TRUE)
 
 }else{
-  write.table(nouvelles_donnees[1,], file = "data/tableau_data.csv", append = TRUE, col.names = FALSE, row.names = FALSE, sep = ",")
+  write.table(nouvelles_donnees[1,], file = "data/tableau_data.txt", append = TRUE, col.names = FALSE, row.names = FALSE, sep = ",")
 }
 
-tableau_fini <- read.csv("data/tableau_data.csv")
+tableau_fini <- read.table("data/tableau_data.txt", sep = ",", header = TRUE)
 tableau_fini
