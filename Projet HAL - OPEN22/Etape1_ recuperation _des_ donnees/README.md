@@ -1,9 +1,9 @@
 Etape 1 - récupération des données 
 Auteurs :
-Clovis 
-Léa D
-Ghislaine
-Hélène 
+Clovis BROGGIO
+Léa DANIELI
+Ghislaine KOSSONOU
+Hélène VIGNON
 
 Importer des données depuis API de HAL
 Avec package jsonline
