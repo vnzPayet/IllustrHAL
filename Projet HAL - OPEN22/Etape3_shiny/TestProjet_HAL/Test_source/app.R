@@ -8,7 +8,7 @@ ui <- fluidPage(theme=shinytheme("sandstone"),
                 navbarPage("Evolution HALathon",
                            tabPanel("Accueil", source("tabAccueil.R", local = TRUE)$value),
                            tabPanel("Application", source("tabApp.R", local = TRUE)$value),
-                           tabPaneltabPanel("About page",source("tabAbout.R", local = TRUE)$value),
+                           tabPanel("About page",source("tabAbout.R", local = TRUE)$value),
                            )
                 )
 
