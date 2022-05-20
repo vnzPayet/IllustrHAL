@@ -7,27 +7,8 @@ tableau <- read.csv2("tableau_fictif.txt", header=TRUE, sep=",")
 ui <- fluidPage(theme=shinytheme("sandstone"),
                 navbarPage("Evolution HALathon",
                            tabPanel("Accueil", source("tabAccueil.R", local = TRUE)$value),
-                           tabPanel("Application",
-                                    sidebarLayout(
-                                      sidebarPanel(
-                                        tags$head(tags$script(src = "message-handler.js")),
-                                        p("Pour afficher les dernières requêtes :"),
-                                        actionButton("do", "Requête"),
-                                        br(),br(),
-                                        p("Pour afficher le graphique :"),
-                                        tags$head(tags$script(src = "message-handler.js")),
-                                        actionButton("graph", "Graphique")
-                                      ),
-
-                                      mainPanel(
-                                        tableOutput("table"),
-                                        plotOutput("barplot"),
-                                        textOutput("texte"),
-                                      ),
-                                      
-                                    ),
-                           ),
-                            tabPanel("About page",
+                           tabPanel("Application", source("tabApp.R", local = TRUE)$value),
+                           tabPanel("About page", 
                                      h4("Cette page a été créer dans le contexte du",strong('HALathon'),", par des étudiants de", a(href = "https://isara.fr","l'ISARA"), "de 4ème année, dans le cadre de leur module optionnel OPEN (Outils, Perspectives et Enjeux du Numériques) 2022."),
                                      h4("La Source est à l'origine de cette demande."),
                                      h4("Le commanditaire est",strong('Oriane Debiez'),"documentaliste et représentant Les Sourcies, équipe du Centre de documentation de l'ISARA."),
