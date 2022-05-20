@@ -90,6 +90,6 @@ Utilisation de R studio : les Sourciers ne sont pas formés à utiliser Python.
 **Rétroplanning : **
 
 ![](picture/Retro.png)
- **Etape, groupe et lien de communication : **
+ **Etapes, groupes et liens de communication : **
  
  ![](picture/Tableau.png)
