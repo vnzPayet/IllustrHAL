@@ -59,7 +59,7 @@ server <- function(input, output) {
   })
   
   texte1 <- eventReactive(input$do, {
-      "Le tableau est bien archivé (ou pas)"
+      "Voici les 3 dernières valeurs. Les valeurs ont bien été enregistrées dans le fichier sauvegarde."
   })
   
   output$texte <- renderText({

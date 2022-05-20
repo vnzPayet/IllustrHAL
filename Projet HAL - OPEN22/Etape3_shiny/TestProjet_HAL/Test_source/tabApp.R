@@ -2,9 +2,11 @@ list(
     sidebarLayout(
     sidebarPanel(
         tags$head(tags$script(src = "message-handler.js")),
-        p("Pour afficher les dernières requêtes :"),
+        p("Pour actualiser les nouvelles données :"),
+        br(),
+        p("Veuillez patienter le résultat s'affichera"),
         actionButton("do", "Requête"),
-        br(),br(),
+        br(),
         p("Pour afficher le graphique :"),
         tags$head(tags$script(src = "message-handler.js")),
         actionButton("graph", "Graphique")
@@ -14,7 +16,7 @@ list(
         tableOutput("table"),
         plotOutput("barplot"),
         textOutput("texte"),
-    ),
+    )
     
 )
 )
