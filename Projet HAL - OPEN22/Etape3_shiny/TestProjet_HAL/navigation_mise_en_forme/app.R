@@ -66,20 +66,30 @@ server <- function(input, output) {
     # Requete HAL et traitement json...
     tail(tableau, 3)
   })
+  
+  texte1 <- eventReactive(input$do, {
+      "Le tableau est bien archivé (ou pas)"
+  })
+  
+  output$texte <- renderText({
+      texte1()
+  })
+  
   output$table <- renderTable({
     df()
-    #output$texte <- renderText({
-   # "Le tableau est bien affiché"
-    })
+  })
   
+ 
+  #### bouton Graph
   gp <- eventReactive(input$graph, {
     tableau
   })
   
-  
   output$barplot <- renderPlot({
     plot(gp()$notice, type = "p")
   })
+  
+  ## Bouton reset 
   reset <- eventReactive(input$reset, {
     reset
     
