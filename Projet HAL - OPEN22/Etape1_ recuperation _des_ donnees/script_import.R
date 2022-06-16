@@ -34,5 +34,6 @@ if (file.exists("data/tableau_data.txt") == FALSE){
   write.table(nouvelles_donnees[1,], file = "data/tableau_data.txt", append = TRUE, col.names = FALSE, row.names = FALSE, sep = ",")
 }
 
-tableau_fini <- read.table("data/tableau_data.txt", sep = ",", header = TRUE)
-tableau_fini
+## Test
+# tableau_fini <- read.table("data/tableau_data.txt", sep = ",", header = TRUE)
+# tableau_fini
