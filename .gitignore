@@ -2,5 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-IllustrHAL/figs/*.png
-IllustrHAL/br/*
+figs/*.png
+br/*
