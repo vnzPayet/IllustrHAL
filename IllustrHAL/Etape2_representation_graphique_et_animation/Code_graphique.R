@@ -23,8 +23,8 @@ maxi <- max(c(n_notice,n_file))*offset
 
 
 ## Dessine moi une histoire
-nb_etape1 <- 40
-nb_etape2 <- 15
+nb_etape1 <- 30
+nb_etape2 <- 35
 nb_etape3 <- 40
 nb_etape4 <- 10
 
@@ -33,73 +33,102 @@ notice0 <- enregistrement$notice[1]/2
 file0 <- enregistrement$file[1]/2
 
 ## une histoire
-NBnotices1 <- seq(notice0, enregistrement$notice[1], le=nb_etape1)
-NBfiles1 <- seq(file0, enregistrement$file[1], le=nb_etape1)
-NBnotices2 <- enregistrement$notice[1]
-NBfiles2 <- enregistrement$file[1]
-NBnotices3 <- seq(enregistrement$notice[1],n_notice, le=nb_etape3)
-NBfiles3 <- seq(enregistrement$file[1], n_file, le=nb_etape3)
+notices <- seq(notice0, n_notice, le=nb_etape1+nb_etape2)
+files <- seq(file0, n_file, le=nb_etape1+nb_etape2)
+# NBnotices2 <- enregistrement$notice[1]
+# NBfiles2 <- enregistrement$file[1]
+# NBnotices3 <- seq(enregistrement$notice[1],n_notice, le=nb_etape3)
+# NBfiles3 <- seq(enregistrement$file[1], n_file, le=nb_etape3)
 
 ## Création des graphiques au format png   
 
 ## Série 1
 for (i in 1:nb_etape1){
-    
-    annee <- 2017+ceiling(1:i/10)
-    
-    png(str_glue("figs/Hal-o-metre_{i+1000}.png"), 
+    index <- i
+    png(str_glue("figs/Hal-o-metre_{index+1000}.png"), 
         width = 400, height = 480)
-    #png("Hal-o-metre.png", width = 400, height = 480)
     par(mar=c(4,4,4,10))
-    barplot(c(NBnotices1[i], NBfiles1[i]), 
+    barplot(c(notices[index], files[index]), 
             names.arg = c("Notices", "Texte intégral"),
-            main=annee[i],
+            cex.names=1.5,
+            main="",
             xlab="",
             ylab="Nombre de dépôts",
             col=c(rgb(0, 0, 95/255), rgb(1, 70/255, 0)),
             las=1,
             ylim=c(0,maxi))
-    #abline(h=200, col="black", lty = "dashed", lwd=3)
     dev.off()
 }
  
 ## série 2
 for (i in 1:nb_etape2){
+    GR <- i*1/35
     index <- nb_etape1+i
     png(str_glue("figs/Hal-o-metre_{index+1000}.png"), 
         width = 400, height = 480)
-    #png("Hal-o-metre.png", width = 400, height = 480)
+ 
     par(mar=c(4,4,4,10))
-    barplot(c(NBnotices2, NBfiles2), 
+    barplot(c(notices[nb_etape1], files[nb_etape1]), 
             names.arg = c("Notices", "Texte intégral"),
+            cex.names=1.5,
             main="",
             xlab="",
             ylab="Nombre de dépôts",
             col=c(rgb(0, 0, 95/255), rgb(1, 70/255, 0)),
             las=1,
             ylim=c(0,maxi))
-    #abline(h=200, col="black", lty = "dashed", lwd=3)
-    dev.off()
+#    abline(h=200, col="black", lty = "dashed", lwd=3)
+    text(2, 400, "30 mars 2022 :\nOuverture du \nportail HAL", 
+         cex=2, 
+         col=rgb(GR,GR,GR),
+         xpd=NA)
+        dev.off()
 } 
   
 ## série 3
 for (i in 1:nb_etape3){
-    index <- nb_etape1+nb_etape2+i
-    png(str_glue("figs/Hal-o-metre_{index+1000}.png"), 
+    indexpng <- nb_etape1+nb_etape2+i
+    index <- nb_etape1+i
+    png(str_glue("figs/Hal-o-metre_{indexpng+1000}.png"), 
         width = 400, height = 480)
-    #png("Hal-o-metre.png", width = 400, height = 480)
+ 
     par(mar=c(4,4,4,10))
-    barplot(c(NBnotices3[i], NBfiles3[i]), 
+    barplot(c(notices[index], files[index]), 
             names.arg = c("Notices", "Texte intégral"),
+            cex.names=1.5,
             main="",
             xlab="",
             ylab="Nombre de dépôts",
             col=c(rgb(0, 0, 95/255), rgb(1, 70/255, 0)),
             las=1,
             ylim=c(0,maxi))
-    #abline(h=200, col="black", lty = "dashed", lwd=3)
-    dev.off()
+     dev.off()
 } 
+
+N <- nb_etape1+nb_etape2+nb_etape3
+png(str_glue("figs/Hal-o-metre_{N+1001}.png"), 
+    width = 400, height = 480)
+
+par(mar=c(4,4,4,10))
+barplot(c(n_notice,n_file ), 
+        names.arg = c("Notices", "Texte intégral"),
+        cex.names=1.5,
+        main="Juillet 2022",
+        xlab="",
+        ylab="Nombre de dépôts",
+        col=c(rgb(0, 0, 95/255), rgb(1, 70/255, 0)),
+        las=1,
+        ylim=c(0,maxi))
+text(0.7, n_notice+50, 
+     paste(n_notice, "notices"), 
+     col=rgb(0, 0, 95/255), cex=1.7, xpd=NA)
+text(2.1, n_file+50, 
+     paste(n_file, "fichiers"), 
+     col=rgb(1, 70/255, 0), cex=1.7, xpd=NA)
+dev.off()
+
+
+
 ## Animation ####
 system("convert -delay 5 figs/*.png -loop 1 hal-o-meter.gif")
 setwd("figs")
