@@ -33,8 +33,8 @@ notice0 <- enregistrement$notice[1]/2
 file0 <- enregistrement$file[1]/2
 
 ## une histoire
-notices <- seq(notice0, n_notice, le=nb_etape1+nb_etape2)
-files <- seq(file0, n_file, le=nb_etape1+nb_etape2)
+notices <- seq(notice0, n_notice, le=nb_etape1+nb_etape3)
+files <- seq(file0, n_file, le=nb_etape1+nb_etape3)
 # NBnotices2 <- enregistrement$notice[1]
 # NBfiles2 <- enregistrement$file[1]
 # NBnotices3 <- seq(enregistrement$notice[1],n_notice, le=nb_etape3)
@@ -126,8 +126,6 @@ text(2.1, n_file+50,
      paste(n_file, "fichiers"), 
      col=rgb(1, 70/255, 0), cex=1.7, xpd=NA)
 dev.off()
-
-
 
 ## Animation ####
 system("convert -delay 5 figs/*.png -loop 1 hal-o-meter.gif")
