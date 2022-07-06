@@ -7,9 +7,8 @@
 library(tidyverse)
 
 ## Importer le tableau à partir d'un fichier csv ####
-# enregistrement <- read.table("data/enregistrements.txt", sep = ",", header = TRUE)
 
-enregistrement <- read_csv("data/enregistrements.csv", 
+enregistrement <- read_csv("../data/enregistrements.csv", 
                            col_types=cols(
                                date=col_date(format="%d/%m/%Y")
                            ))
@@ -35,17 +34,13 @@ file0 <- enregistrement$file[1]/2
 ## une histoire
 notices <- seq(notice0, n_notice, le=nb_etape1+nb_etape3)
 files <- seq(file0, n_file, le=nb_etape1+nb_etape3)
-# NBnotices2 <- enregistrement$notice[1]
-# NBfiles2 <- enregistrement$file[1]
-# NBnotices3 <- seq(enregistrement$notice[1],n_notice, le=nb_etape3)
-# NBfiles3 <- seq(enregistrement$file[1], n_file, le=nb_etape3)
 
-## Création des graphiques au format png   
+## Création des graphiques au format png   ####
 
 ## Série 1
 for (i in 1:nb_etape1){
     index <- i
-    png(str_glue("figs/Hal-o-metre_{index+1000}.png"), 
+    png(str_glue("../figs/Hal-o-metre_{index+1000}.png"), 
         width = 400, height = 480)
     par(mar=c(4,4,4,10))
     barplot(c(notices[index], files[index]), 
@@ -64,7 +59,7 @@ for (i in 1:nb_etape1){
 for (i in 1:nb_etape2){
     GR <- i*1/35
     index <- nb_etape1+i
-    png(str_glue("figs/Hal-o-metre_{index+1000}.png"), 
+    png(str_glue("../figs/Hal-o-metre_{index+1000}.png"), 
         width = 400, height = 480)
  
     par(mar=c(4,4,4,10))
@@ -89,7 +84,7 @@ for (i in 1:nb_etape2){
 for (i in 1:nb_etape3){
     indexpng <- nb_etape1+nb_etape2+i
     index <- nb_etape1+i
-    png(str_glue("figs/Hal-o-metre_{indexpng+1000}.png"), 
+    png(str_glue("../figs/Hal-o-metre_{indexpng+1000}.png"), 
         width = 400, height = 480)
  
     par(mar=c(4,4,4,10))
@@ -106,7 +101,7 @@ for (i in 1:nb_etape3){
 } 
 
 N <- nb_etape1+nb_etape2+nb_etape3
-png(str_glue("figs/Hal-o-metre_{N+1001}.png"), 
+png(str_glue("../figs/Hal-o-metre_{N+1001}.png"), 
     width = 400, height = 480)
 
 par(mar=c(4,4,4,10))
@@ -128,7 +123,12 @@ text(2.1, n_file+50,
 dev.off()
 
 ## Animation ####
-system("convert -delay 5 figs/*.png -loop 1 hal-o-meter.gif")
-setwd("figs")
+system("convert -delay 5 ../figs/*.png -loop 1 ../Etape3_shiny/www/hal-o-meter.gif")
+#system("mv hal-o-meter.gif www/")
+dir <- getwd()
+setwd("../figs")
 file.remove(list.files(pattern="*.png"))
-setwd("..")
+setwd(dir)
+
+## Afficher le gif #####
+img(src = "hal-o-meter.gif", width = 300)
