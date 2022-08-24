@@ -1,2 +1,5 @@
-# faire un bouton reset 
-# Faire un bouton reload pour le gif 
+# TODO
+
+# Faire un bouton reset 
+# Faire un bouton reload pour le gif
+
